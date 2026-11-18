@@ -56,7 +56,8 @@
   pertama dibuka. Data Anda di server hanya dikaitkan dengan ID ini, bukan
   dengan nama, email, atau identitas lain. Server hanya memberikan data kepada
   perangkat yang membawa ID tersebut, sehingga pengguna lain tidak dapat
-  melihat data Anda.</p>
+  melihat data Anda. Server juga mencatat sementara alamat IP pengirim request
+  untuk membatasi penyalahgunaan (lihat bagian Menghapus data).</p>
   <p>Bila aplikasi di-uninstall, ID tersebut ikut terhapus dan data di server
   tidak lagi dapat diakses dari perangkat mana pun.</p>
 
@@ -76,6 +77,14 @@
   Anda dihapus dari server dan dari perangkat. Bila aplikasi sudah terhapus dari
   perangkat Anda, penghapusan data di server dapat diminta lewat email di bawah
   dengan menyertakan ID perangkat yang tertera di menu tersebut.</p>
+  <p>Penghapusan lewat aplikasi berlaku seketika: catatan latihan dihapus
+  permanen dari database server, bukan sekadar disembunyikan. Permintaan lewat
+  email diproses paling lambat 30 hari setelah diterima. Untuk mencegah
+  penyalahgunaan, server mencatat sementara alamat IP dan ID perangkat
+  pengirim request beserta jumlah request-nya; catatan ini terhapus otomatis
+  dalam waktu sekitar satu jam. Log teknis dan cadangan milik penyedia server
+  (Supabase) dapat menyimpan salinan sementara sesuai masa simpan mereka,
+  lalu terhapus dengan sendirinya.</p>
 
   <h2>Perubahan kebijakan</h2>
   <p>Bila kebijakan ini berubah, versi terbaru akan dipublikasikan di halaman ini
